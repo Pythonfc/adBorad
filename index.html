@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="csrf_token" content="Gq9XW10YqUqoCgMmBatVcM08Jmg9jlTRBBLbSoic">
+<meta name="csrf-token" content="Gq9XW10YqUqoCgMmBatVcM08Jmg9jlTRBBLbSoic">
+<title>
+                    MobileHub 后台管理系统
+            </title>
+<!-- Tell the browser to be responsive to screen width --><meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Bootstrap 3.3.7 --><link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- Font Awesome --><link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons --><link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. --><link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
+<!-- Morris chart --><link rel="stylesheet" href="/bower_components/morris.js/morris.css">
+<!-- jvectormap --><link rel="stylesheet" href="/bower_components/jvectormap/jquery-jvectormap.css">
+<!-- Date Picker --><link rel="stylesheet" href="/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<!-- Daterange picker --><link rel="stylesheet" href="/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<!-- bootstrap wysihtml5 - text editor --><link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<!-- Select2 --><link rel="stylesheet" href="/bower_components/select2/dist/css/select2.min.css">
+<!-- Theme style --><link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+<!-- Bootstrap-sweetAlert --><link rel="stylesheet" href="/bower_components/bootstrap-sweetalert/dist/sweetalert.css">
+<link rel="icon" type="image/png" href="/dist/img/favicon.png">
+<link rel="stylesheet" href="/css/main.css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+    <!-- <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> --><!-- <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> --><!-- Google Font --><!--
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+          --><script type="text/javascript" src="//s.thsi.cn/js/m/vue/vue-2.5.10.min.js"></script><script type="text/javascript" src="//s.thsi.cn/js/m/business/less.js"></script><script src="/js/dataBoard/common/d3_charts.js"></script><script src="/js/dataBoard/common/vue-resource.js"></script><script src="/js/adConfig/common/elementUI.js"></script><style>
+        @import  url("/css/adConfig/common/elementUI.css");
+    </style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+<header class="main-header"><!-- Logo --><a href="http://mobilehub.hexin.cn" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>HUB</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">MOBILE<b>HUB</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top"><!-- Sidebar toggle button--><a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <a href="#" style="padding: 15px 15px; float: left; color: #fff;">
+                    </a>
+
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+<!-- Control Sidebar Toggle Button --><li>
+                    <a href="http://mobilehub.hexin.cn/logout" title="退出登录"><i class="fa fa-sign-out"></i></a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                </li>
+            </ul>
+</div>
+    </nav></header><!-- Control Sidebar --><aside class="control-sidebar control-sidebar-dark"><!-- Create the tabs --><ul class="nav nav-tabs nav-justified control-sidebar-tabs"></ul>
+<!-- Tab panes --><div class="tab-content">
+        <!-- Home tab content -->
+        <div class="tab-pane" id="control-sidebar-home-tab">
+            <!-- /.control-sidebar-menu -->
+            <!-- /.control-sidebar-menu -->
+        </div>
+        <!-- /.tab-pane -->
+        <!-- Stats tab content -->
+        <div class="tab-pane" id="control-sidebar-stats-tab"></div>
+        <!-- /.tab-pane -->
+        <!-- Settings tab content -->
+        <div class="tab-pane" id="control-sidebar-settings-tab">
+        </div>
+        <!-- /.tab-pane -->
+    </div>
+</aside><!-- /.control-sidebar --><!-- Left side column. contains the logo and sidebar --><aside class="main-sidebar"><!-- sidebar: style can be found in sidebar.less --><section class="sidebar"><!-- Sidebar user panel --><div class="user-panel">
+            <div class="pull-left image">
+                <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+</div>
+            <div class="pull-left info">
+                <p>xiaoquan</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+            </div>
+        </div>
+        <!-- search form -->
+        <div class="sidebar-form">
+            <div class="input-group" style="width: 100%;">
+                <select type="text" name="q" class="form-control" id="menu-search"><option data-url="http://mobilehub.hexin.cn" menu-id="5">主页</option>
+<option data-url="#" menu-id="78">申请权限</option>
+<option data-url="http://mobilehub.hexin.cn/permissionApply/index" menu-id="79">个人权限申请</option>
+<option data-url="#" menu-id="1">权限管理</option>
+<option data-url="http://mobilehub.hexin.cn/permissionApply/auditing" menu-id="80">审核权限申请</option>
+<option data-url="#" menu-id="63">积分系统</option>
+<option data-url="http://mobilehub.hexin.cn/coin/chart" menu-id="64">积分图表</option>
+<option data-url="http://mobilehub.hexin.cn/coin/index" menu-id="65">积分总览</option>
+<option data-url="http://mobilehub.hexin.cn/coin/detail" menu-id="66">用户积分明细</option>
+<option data-url="http://mobilehub.hexin.cn/coin/business" menu-id="67">业务方接入管理</option>
+<option data-url="http://mobilehub.hexin.cn/coin/product" menu-id="68">兑换产品管理</option>
+<option data-url="#" menu-id="98">运营中台</option>
+<option data-url="#" menu-id="99">用户分群</option>
+<option data-url="http://mobilehub.hexin.cn/OperatePlatform/CbasLabel" menu-id="101">标签圈人</option>
+<option data-url="http://mobilehub.hexin.cn/OperatePlatform/UserGroup" menu-id="100">分群列表</option>
+<option data-url="http://mobilehub.hexin.cn/OperatePlatform/labelManage" menu-id="102">标签管理</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/outerLink/kyc" menu-id="160">KYC标签后台</option>
+<option data-url="#" menu-id="103">内容生产</option>
+<option data-url="#" menu-id="104">人工文章</option>
+<option data-url="http://mobilehub.hexin.cn/docker_operationArsenal/articleManage/query" menu-id="106">文章查询</option>
+<option data-url="http://mobilehub.hexin.cn/docker_operationArsenal/articleManage/add" menu-id="107">新增文章</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/outerLink/smartDesign" menu-id="164">素材库管理后台</option>
+<option data-url="#" menu-id="105">内容标签库</option>
+<option data-url="http://mobilehub.hexin.cn/docker_operationArsenal/labelSystem" menu-id="108">标签体系</option>
+<option data-url="http://mobilehub.hexin.cn/docker_operationArsenal/labelManage" menu-id="109">内容标签管理</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/outerLink/landPage" menu-id="161">落地页配置后台</option>
+<option data-url="#" menu-id="146">推送系统</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/audit/auditApplyPage" menu-id="169">推送系统权限申请</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/audit/index" menu-id="170">推送系统权限审核</option>
+<option data-url="#" menu-id="143">广告后台</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/price/index" menu-id="196">广告筹码分配</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/index" menu-id="144">广告列表</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/carousel/index" menu-id="154">轮播控制</option>
+<option data-url="#" menu-id="172">PUSH后台</option>
+<option data-url="http://mobilehub.hexin.cn/docker_push/PushAmount" menu-id="173">PUSH业务方排期</option>
+<option data-url="http://mobilehub.hexin.cn/docker_push/PushLink" menu-id="174">PUSH链接录入</option>
+<option data-url="http://mobilehub.hexin.cn/docker_push/PushInfo" menu-id="175">PUSH列表</option>
+<option data-url="http://mobilehub.hexin.cn/docker_push/PushLimit" menu-id="176">PUSH条数限制</option>
+<option data-url="#" menu-id="119">策略运营后台</option>
+<option data-url="http://mobilehub.hexin.cn/OperatePlatform/Strategy" menu-id="120">策略管理</option>
+<option data-url="http://mobilehub.hexin.cn/OperatePlatform/Event" menu-id="121">事件管理</option>
+<option data-url="http://mobilehub.hexin.cn/OperatePlatform/StrategyOption" menu-id="122">全局触达控制</option>
+<option data-url="http://mobilehub.hexin.cn/docker_operationArsenal/userfile/list" menu-id="141">中台总名单管理</option>
+<option data-url="http://mobilehub.hexin.cn/OperatePlatform/Permission" menu-id="142">业务及权限管理</option>
+<option data-url="#" menu-id="162">数据看板</option>
+<option data-url="http://mobilehub.hexin.cn/docker_adConfig/outerLink/cbas" menu-id="163">cbas后台</option>
+<option data-url="http://mobilehub.hexin.cn/docker_dataBoard/chart/index" menu-id="201">活动效果看板</option>
+<option data-url="http://mobilehub.hexin.cn/docker_dataBoard/adChart/index" menu-id="204">广告效果看板</option>
+<option data-url="http://mobilehub.hexin.cn/docker_dataBoard/config/index" menu-id="195">活动申请配置</option>
+<option data-url="#" menu-id="30">话题页管理</option>
+<option data-url="http://mobilehub.hexin.cn/topicPage/topic" menu-id="31">话题管理</option></select><!--
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                                class="fa fa-search"></i>
+                    </button>
+                </span>
+                -->
+</div>
+        </div>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu tree" data-widget="tree" id="sidebar-menu">
+<li class="header">菜单 <span class="fa fa-refresh pull-right" id="refresh">?刷新</span>
+</li>
+            <li><a parent_id="0" menu_id="5" href="http://mobilehub.hexin.cn"><i class="fa fa-dashboard"></i><span>主页</span></a></li>
+<li class="treeview">
+<a href="#" parent_id="0" menu_id="78"><i class="fa fa-bars"></i><span>申请权限</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu"><li><a parent_id="78" menu_id="79" href="http://mobilehub.hexin.cn/permissionApply/index"><i class="fa fa-user"></i><span>个人权限申请</span></a></li></ul>
+</li>
+<li class="treeview">
+<a href="#" parent_id="0" menu_id="1"><i class="fa fa-puzzle-piece"></i><span>权限管理</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu"><li><a parent_id="1" menu_id="80" href="http://mobilehub.hexin.cn/permissionApply/auditing"><i class="fa fa-user-plus"></i><span>审核权限申请</span></a></li></ul>
+</li>
+<li class="treeview">
+<a href="#" parent_id="0" menu_id="63"><i class="fa fa-bars"></i><span>积分系统</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="63" menu_id="64" href="http://mobilehub.hexin.cn/coin/chart"><i class="fa fa-bars"></i><span>积分图表</span></a></li>
+<li><a parent_id="63" menu_id="65" href="http://mobilehub.hexin.cn/coin/index"><i class="fa fa-bars"></i><span>积分总览</span></a></li>
+<li><a parent_id="63" menu_id="66" href="http://mobilehub.hexin.cn/coin/detail"><i class="fa fa-bars"></i><span>用户积分明细</span></a></li>
+<li><a parent_id="63" menu_id="67" href="http://mobilehub.hexin.cn/coin/business"><i class="fa fa-bars"></i><span>业务方接入管理</span></a></li>
+<li><a parent_id="63" menu_id="68" href="http://mobilehub.hexin.cn/coin/product"><i class="fa fa-bars"></i><span>兑换产品管理</span></a></li>
+</ul>
+</li>
+<li class="active treeview menu-open">
+<a href="#" parent_id="0" menu_id="98"><i class="fa fa-bars"></i><span>运营中台</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li class="treeview">
+<a href="#" parent_id="98" menu_id="99"><i class="fa fa-bars"></i><span>用户分群</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="99" menu_id="101" href="http://mobilehub.hexin.cn/OperatePlatform/CbasLabel"><i class="fa fa-tags"></i><span>标签圈人</span></a></li>
+<li><a parent_id="99" menu_id="100" href="http://mobilehub.hexin.cn/OperatePlatform/UserGroup"><i class="fa fa-group"></i><span>分群列表</span></a></li>
+<li><a parent_id="99" menu_id="102" href="http://mobilehub.hexin.cn/OperatePlatform/labelManage"><i class="fa fa-tags"></i><span>标签管理</span></a></li>
+<li><a parent_id="99" menu_id="160" href="http://mobilehub.hexin.cn/docker_adConfig/outerLink/kyc"><i class="fa fa-bars"></i><span>KYC标签后台</span></a></li>
+</ul>
+</li>
+<li class="treeview">
+<a href="#" parent_id="98" menu_id="103"><i class="fa fa-bars"></i><span>内容生产</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li class="treeview">
+<a href="#" parent_id="103" menu_id="104"><i class="fa fa-bars"></i><span>人工文章</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="104" menu_id="106" href="http://mobilehub.hexin.cn/docker_operationArsenal/articleManage/query"><i class="fa fa-bars"></i><span>文章查询</span></a></li>
+<li><a parent_id="104" menu_id="107" href="http://mobilehub.hexin.cn/docker_operationArsenal/articleManage/add"><i class="fa fa-bars"></i><span>新增文章</span></a></li>
+</ul>
+</li>
+<li><a parent_id="103" menu_id="164" href="http://mobilehub.hexin.cn/docker_adConfig/outerLink/smartDesign"><i class="fa fa-bars"></i><span>素材库管理后台</span></a></li>
+<li class="treeview">
+<a href="#" parent_id="103" menu_id="105"><i class="fa fa-bars"></i><span>内容标签库</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="105" menu_id="108" href="http://mobilehub.hexin.cn/docker_operationArsenal/labelSystem"><i class="fa fa-bars"></i><span>标签体系</span></a></li>
+<li><a parent_id="105" menu_id="109" href="http://mobilehub.hexin.cn/docker_operationArsenal/labelManage"><i class="fa fa-bars"></i><span>内容标签管理</span></a></li>
+</ul>
+</li>
+<li><a parent_id="103" menu_id="161" href="http://mobilehub.hexin.cn/docker_adConfig/outerLink/landPage"><i class="fa fa-bars"></i><span>落地页配置后台</span></a></li>
+</ul>
+</li>
+<li class="treeview">
+<a href="#" parent_id="98" menu_id="146"><i class="fa fa-paper-plane"></i><span>推送系统</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="146" menu_id="169" href="http://mobilehub.hexin.cn/docker_adConfig/audit/auditApplyPage"><i class="fa fa-bars"></i><span>推送系统权限申请</span></a></li>
+<li><a parent_id="146" menu_id="170" href="http://mobilehub.hexin.cn/docker_adConfig/audit/index"><i class="fa fa-bars"></i><span>推送系统权限审核</span></a></li>
+<li class="treeview">
+<a href="#" parent_id="146" menu_id="143"><i class="fa fa-bars"></i><span>广告后台</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="143" menu_id="196" href="http://mobilehub.hexin.cn/docker_adConfig/price/index"><i class="fa fa-bars"></i><span>广告筹码分配</span></a></li>
+<li><a parent_id="143" menu_id="144" href="http://mobilehub.hexin.cn/docker_adConfig/index"><i class="fa fa-bars"></i><span>广告列表</span></a></li>
+<li><a parent_id="143" menu_id="154" href="http://mobilehub.hexin.cn/docker_adConfig/carousel/index"><i class="fa fa-bars"></i><span>轮播控制</span></a></li>
+</ul>
+</li>
+<li class="treeview">
+<a href="#" parent_id="146" menu_id="172"><i class="fa fa-bars"></i><span>PUSH后台</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="172" menu_id="173" href="http://mobilehub.hexin.cn/docker_push/PushAmount"><i class="fa fa-bars"></i><span>PUSH业务方排期</span></a></li>
+<li><a parent_id="172" menu_id="174" href="http://mobilehub.hexin.cn/docker_push/PushLink"><i class="fa fa-bars"></i><span>PUSH链接录入</span></a></li>
+<li><a parent_id="172" menu_id="175" href="http://mobilehub.hexin.cn/docker_push/PushInfo"><i class="fa fa-bars"></i><span>PUSH列表</span></a></li>
+<li><a parent_id="172" menu_id="176" href="http://mobilehub.hexin.cn/docker_push/PushLimit"><i class="fa fa-bars"></i><span>PUSH条数限制</span></a></li>
+</ul>
+</li>
+<li class="treeview">
+<a href="#" parent_id="146" menu_id="119"><i class="fa fa-bars"></i><span>策略运营后台</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="119" menu_id="120" href="http://mobilehub.hexin.cn/OperatePlatform/Strategy"><i class="fa fa-bars"></i><span>策略管理</span></a></li>
+<li><a parent_id="119" menu_id="121" href="http://mobilehub.hexin.cn/OperatePlatform/Event"><i class="fa fa-bars"></i><span>事件管理</span></a></li>
+<li><a parent_id="119" menu_id="122" href="http://mobilehub.hexin.cn/OperatePlatform/StrategyOption"><i class="fa fa-bars"></i><span>全局触达控制</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a parent_id="98" menu_id="141" href="http://mobilehub.hexin.cn/docker_operationArsenal/userfile/list"><i class="fa fa-bars"></i><span>中台总名单管理</span></a></li>
+<li><a parent_id="98" menu_id="142" href="http://mobilehub.hexin.cn/OperatePlatform/Permission"><i class="fa fa-bars"></i><span>业务及权限管理</span></a></li>
+<li class="active treeview menu-open">
+<a href="#" parent_id="98" menu_id="162"><i class="fa fa-bars"></i><span>数据看板</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu">
+<li><a parent_id="162" menu_id="163" href="http://mobilehub.hexin.cn/docker_adConfig/outerLink/cbas"><i class="fa fa-bars"></i><span>cbas后台</span></a></li>
+<li><a parent_id="162" menu_id="201" href="http://mobilehub.hexin.cn/docker_dataBoard/chart/index"><i class="fa fa-bars"></i><span>活动效果看板</span></a></li>
+<li class="active"><a parent_id="162" menu_id="204" href="http://mobilehub.hexin.cn/docker_dataBoard/adChart/index"><i class="fa fa-bars"></i><span>广告效果看板</span></a></li>
+<li><a parent_id="162" menu_id="195" href="http://mobilehub.hexin.cn/docker_dataBoard/config/index"><i class="fa fa-bars"></i><span>活动申请配置</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="treeview">
+<a href="#" parent_id="0" menu_id="30"><i class="fa fa-bookmark-o"></i><span>话题页管理</span>
+<span class="pull-right-container"><i class="fa fa-angle-down pull-right"></i></span>
+</a><ul class="treeview-menu"><li><a parent_id="30" menu_id="31" href="http://mobilehub.hexin.cn/topicPage/topic"><i class="fa fa-file-o"></i><span>话题管理</span></a></li></ul>
+</li>
+        </ul></section><!-- /.sidebar --></aside><!-- Content Wrapper. Contains page content --><div class="content-wrapper">
+            <style>
+        .el-submenu__title:hover{
+            height:44px;
+            background:#3C8DBC
+        }
+        li,ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+        #ul01{
+            border-radius: 6px;
+        }
+        .li{
+            float:left;
+            width:326.6px;
+            height:160px;
+            border: 2px solid #fff;
+        }
+        .li:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+            border-radius: 6px;
+        }
+        /* 总览-下划线 */
+        .el-menu--horizontal .el-menu-item.is-active {
+            /* border-bottom: 2px solid #3C8DBC; */
+            color: #303133;
+        }
+        /* rgb(89, 89, 89) */
+        /* 分部门 */
+        .el-menu--popup {
+            z-index: 100;
+            border: none;
+            padding: 0px 0;
+            border-radius: 6px;
+            overflow-y: scroll;
+            height:300px;
+            -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+        }
+        .el-menu--horizontal .el-submenu.is-active .el-submenu__title {
+            border-bottom: 2px solid #3C8DBC;
+            color: #303133;
+        }
+        .el-menu--horizontal .el-submenu .el-submenu__title {
+            height: 44px;
+            line-height: 44px;
+            border-bottom: 2px solid transparent;
+            color: #595959;
+        }
+        .el-submenu__title {
+            font-weight:700;
+            font-size: 20px;
+            font-family: PingFangSC-Semibold;
+            color: #303133;
+            padding: 0 33px;
+            cursor: pointer;
+            -webkit-transition: border-color .3s,background-color .3s,color .3s;
+            transition: border-color .3s,background-color .3s,color .3s;
+            box-sizing: border-box;
+        }
+        .el-submenu__title:hover{
+            background:#3C8DBC
+        }
+        /* .el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+            outline: 0;
+            color: #fff;
+            background:#3C8DBC
+        } */
+        .el-menu-item.is-active:hover{
+            background:#3C8DBC
+
+        }
+        .el-submenu__title:hover, .is-opened:hover {
+            background:#3C8DBC
+        }
+        .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+           background-color: #3C8DBC;
+            color: #fff;
+        }
+        .el-menu--horizontal .el-menu .el-menu-item, .el-menu--horizontal .el-menu .el-submenu__title {
+            background-color: #FFF;
+            float: none;
+            height: 54px;
+            line-height: 54px;
+            padding: 0 10px;
+            color: #909399;
+        }
+        .el-menu-item {
+            font-size: 16px;
+            color: #303133;
+            padding: 0 20px;
+            cursor: pointer;
+            -webkit-transition: border-color .3s,background-color .3s,color .3s;
+            transition: border-color .3s,background-color .3s,color .3s;
+            box-sizing: border-box;
+        }
+        /* 分应用 */
+        .el-input__inner {
+            -webkit-appearance: none;
+            background-color: #FFF;
+            background-image: none;
+            border-radius: 4px;
+            border: 1px solid #DCDFE6;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            color: #606266;
+            display: inline-block;
+            font-size: inherit;
+            border:0;
+            height: 36px;
+            line-height: 36px;
+            outline: 0;
+            padding: 0 15px;
+            -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+            transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+            width: 100%;
+        }
+        /* 时间选择快捷键 */
+        .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+            color: #FFF;
+            background-color: #3C8DBC;
+            border-color: #3C8DBC;
+            -webkit-box-shadow: -1px 0 0 0 #3C8DBC;
+            box-shadow: -1px 0 0 0 #3C8DBC;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+            border-radius: 4px;
+            border-radius: 4px;
+        }
+        .el-radio-button__inner {
+            height:28px;
+            white-space: nowrap;
+            background: #F5f5f5;
+            /* border: 1px solid #DCDFE6; */
+            border-left:0;
+            border-top:0;
+            border-bottom:0;
+            border-right:0;
+            font-weight: 500;
+            border-left: 0;
+            color: #606266;
+            -webkit-appearance: none;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: 0;
+            margin: 0;
+            position: relative;
+            cursor: pointer;
+            -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+            transition: all .3s cubic-bezier(.645,.045,.355,1);
+            padding: 5px 0px;
+            width:74.3px;
+            font-size: 14px;
+            border-radius: 0;
+        }
+        .el-radio-button__inner, .el-radio-group {
+            display: inline-block;
+            line-height: 1.4;
+            vertical-align: middle;border-radius: 4px;
+        }
+        .el-radio-group {
+            font-size: 0;
+            margin-left: 4px;
+            margin-top: 4px;
+            border-radius: 6px;
+            border-radius: 6px
+        }
+        .el-date-editor .el-range-separator {
+            padding: 0 0px;
+            line-height: 32px;
+            width: 5%;
+            color: #303133;
+        }
+        .el-radio-button:first-child .el-radio-button__inner {
+            border-left: 0;
+            border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: none!important;
+            box-shadow: none!important;
+        }
+        /* 饼图 */
+        #pie01, #pie02, #pie03{
+            border-radius: 6px;
+            border: 2px solid #fff;
+        }
+        #pie01:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        #pie02:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        #pie03:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        /* 分位置图 */
+        #fen01, #fen02, #fen03, #fen04{
+            border-radius: 6px;
+            border: 2px solid #fff;
+        }
+        #fen01:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        #fen02:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        #fen03:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        #fen04:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        /* 分位置  下拉菜单 */
+        .el-cascader {
+            display: inline-block;
+            position: relative;
+            font-size: 14px;
+            line-height: 39px;
+        }
+        .el-select .el-tag {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border-color: transparent;
+            margin: 0px 0 2px 2px;
+            background-color: #f0f2f5;
+        }
+        .el-tag--small {
+            height: 18px;
+            padding: 0 5px;
+            line-height: 18px;
+        }
+        /* 自定义列 导出数据 */
+        .el-button--medium {
+            padding: 5px 11px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+        /* 弹出框 */
+        .el-dialog {
+            position: relative;
+            margin: 0 auto 50px;
+            border-radius: 2px;
+            -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+            box-shadow: 0 1px 3px rgba(0,0,0,.3);
+            box-sizing: border-box;
+            width: 540px;
+            height: 450px;
+        }
+        .el-dialog__header {
+            padding: 20px 20px 20px;
+            font-family: PingFangSC-Semibold;
+            font-size: 16px;
+            color: #1E2024;
+            text-align: left;
+            border-bottom: 1px solid #EBEBEB;
+        }
+        .el-dialog__body {
+            padding: 16px 20px;
+            color: #606266;
+            font-size: 14px;
+            word-break: break-all;
+        }
+        .el-checkbox {
+            color: #606266;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            margin-right: 110px;
+            margin-bottom: 14px;
+        }
+        .el-checkbox__input.is-checked+.el-checkbox__label {
+                color: #595959;
+        }
+        .el-checkbox__inner::after {
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+            content: "";
+            border: 1px solid red;
+            border-left: 0;
+            border-top: 0;
+            height: 7px;
+            left: 4px;
+            position: absolute;
+            top: 1px;
+            -webkit-transform: rotate(45deg) scaleY(0);
+            transform: rotate(45deg) scaleY(0);
+            width: 3px;
+            -webkit-transition: -webkit-transform .15s ease-in .05s;
+            transition: -webkit-transform .15s ease-in .05s;
+            transition: transform .15s ease-in .05s;
+            transition: transform .15s ease-in .05s,-webkit-transform .15s ease-in .05s;
+            -webkit-transform-origin: center;
+            transform-origin: center;
+        }
+        .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #fff;
+            border-color: #ebebeb;
+        }
+        .el-checkbox__inner:hover {
+            border-color: #ebebeb;
+        }
+        .el-checkbox__inner {
+            display: inline-block;
+            position: relative;
+            border: 1px solid #ebebeb;
+            border-radius: 2px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 14px;
+            height: 14px;
+            background-color: #FFF;
+            z-index: 1;
+            -webkit-transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+            transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+        }
+        .el-table td, .el-table th {
+            padding: 10px 0;
+            min-width: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            position: relative;
+            text-align: center;
+        }
+        .el-table--enable-row-transition .el-table__body td {
+            -webkit-transition: background-color .25s ease;
+            text-align:center;
+            padding: 15px 0px;
+            transition: background-color .25s ease;
+        }
+        /*分部门饼图 hover */
+        #pie0102, #pie0202{
+            border: 2px solid #fff;
+        }
+        #pie0102:hover, #pie0202:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        /* 分部门 趋势图 hover */
+        #fen0102:hover, #fen0202:hover, #fen0302:hover, #fen0402:hover, #fen0502:hover{
+            border: 2px solid #3C8DBC;
+            border-radius: 6px;
+        }
+        #fen0102, #fen0202, #fen0302, #fen0402, #fen0502{
+            border: 2px solid #fff;
+        }
+        /* 弹窗 确认颜色 */
+        .el-button--primary {
+            color: #FFF;
+            background-color: #3C8DBC;
+            border-color: #3C8DBC;
+        }
+        .el-button--primary:hover {
+            background: #357EA8;
+            border-color: #357EA8;
+            color: #FFF;
+        }
+        .el-dialog__title {
+            line-height: 24px;
+            font-size: 18px;
+            color: #303133;
+            font-weight: 600;
+        }
+    </style>
+<div id="app" style="margin-left:20px;margin-right:20px">
+        <!-- 导航菜单栏 -->
+        <div id="menuShow" style="width:100%; height:7rem"> 
+            <div id="subDepartment" style="width:303px; height:44px;float:left;margin-top:20px"> 
+                <el-menu :default-active="activeIndex" class="el-menu-demo" overflow-y="scroll" mode="horizontal" text-color="#595959" active-text-color="#3C8DBC" v-on:select="handleSelect" style="height:44px"><el-menu-item index="1" style="height:44px;width:151px;font-size:20px;font-family: PingFangSC-Semibold;text-align:center;line-height:44px;" id="zonglan" v-on:click="updateAll"><strong>总览</strong></el-menu-item><el-submenu index="111" style="height:44px; width:151px;"><template slot="title" style="height:44px;font-size:20px;font-family: PingFangSC-Semibold;text-align:center;line-height:44px">分部门</template><el-menu-item v-for="item in departmentList" :index="item.name" v-text="item.name" v-on:click="subDpart(item.key, item.name)" style=""></el-menu-item></el-submenu></el-menu><div class="line"></div>
+            </div>
+            <div id="dataUpdate" style="width:140px;float:left;height:44px;margin-top:20px;margin-left:12px">
+                <div style="margin-top:2px">数据更新至</div>
+                <div v-text="updateTime"></div>
+            </div>
+            <div id="subApp" style="float:left;margin-left:67px;height:44px;margin-top:20px">
+                    <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;"><strong>分应用：</strong></span>
+                    <el-select v-model="apps" placeholder="请选择" style="width: 190px;height:36px" v-on:change="subAppChange"><el-option v-for="item2 in app01" :key="item2.key" :label="item2.name" :value="item2.name"></el-option></el-select>
+</div>
+            <div id="timeChoiceFast" style="float:left;margin-left:83px;height:44px;margin-top:20px">
+                <div style="width:90px;height:25px;font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;float:left;line-height:37px"><strong>时间选择：</strong></div>
+                <div style="width:306px;height:36px;background:#fff;float:left;border-radius: 6px;" id="kuaiJie">
+                    <el-radio-group v-model="radio1" v-on:change="quickTime"><el-radio-button label="近30天"></el-radio-button><el-radio-button label="近7天"></el-radio-button><el-radio-button label="昨天"></el-radio-button><el-radio-button label="今天"></el-radio-button></el-radio-group>
+</div>
+            </div>
+            <div id="timeChoice" style="float:left;margin-left:15px;height:3.667rem;margin-top:20px">
+                <div class="block">
+                    <el-date-picker v-model="value1" type="daterange" range-separator="至" start-placeholder="开始日期" format="yyyy-MM-dd" value-format="yyyy-MM-dd" end-placeholder="结束日期" v-on:change="choiceDetailTime"></el-date-picker>
+</div>
+            </div>
+        </div>
+        <!-- 总览 -->
+        <div id="all">
+            <!-- 指标&&饼图 -->
+            <div id="targetPie" style="width:100%; height:540px">
+                <!-- 指标 -->
+                <div id="target">
+                    <ul style="width:1633px;height:160px;background:#fff;border-radius: 6px;">
+<li class="li" v-for="datalist in dataList" style="text-align:center;border-radius:6px">
+                            <div class="dataFont" v-text="datalist.name" style="font-family: PingFangSC-Regular;font-size: 18px;color: #595959;margin-top:24px"></div>
+                            <div class="dataCount" v-text="datalist.datas" style="text-align:center;ont-family: THSMoneyfont-Medium;font-size: 40px;color: #1E2024;margin-top:0px;padding-top:10px"></div>
+                        </li>
+                    </ul>
+</div>
+                <!-- 饼图 -->
+                <div id="zongLanPie" style="margin-top:16px">
+                    <div id="pie01" style="float:left;width:534px; height: 361px;background:#fff;margin-right:15.5px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:78%;height:100%;line-height:61px;margin-left:20px">
+                                <strong>分部门总筹码消耗分布</strong></span>
+                            <span style="width:18%;height:100%;float:right;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="pieLoad('businessAndPriceConsume')">导数据</span>
+                        </div>
+                        <div style="width:450px;height:278px;background:#fff;margin-left:40px;margin-top: 18px;" id="pie001"></div>
+                    </div>
+                    <div id="pie02" style="float:left;width:534px; height: 361px;background:#fff;margin-right:15.5px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:78%;height:100%;line-height:61px;margin-left:20px">
+                                <strong>分部门总广告投放数分布</strong></span>
+                            <span style="width:18%;height:100%;float:right;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="pieLoad('businessAndAdNum')">导数据</span>
+                        </div>
+                        <div style="width:450px;height:278px;background:#fff;margin-left:40px;margin-top: 18px;" id="pie002"></div>
+                    </div>
+                    <div id="pie03" style="float:left;width:534px; height: 361px;background:#fff">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:78%;height:100%;line-height:61px;margin-left:20px">
+                                <strong>分位置总筹码消耗分布</strong></span>
+                            <span style="width:18%;height:100%;float:right;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="pieLoad('positionAndPriceConsume')">导数据</span>
+                        </div>
+                        <div style="width:450px;height:278px;background:#fff;margin-left:40px;margin-top: 18px;" id="pie003"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 分位置趋势图 -->
+            <div id="subPosition" style="margin-top:16px;width:100%;height:806px;">
+                <div id="fen01" style="width:809px;height:395px;background:#fff;float:left;margin-right:15px">
+                    <div style="width:100%;height:61px">
+                        <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:50%;height:100%;line-height:61px;margin-left:20px;float:left">
+                            <strong>分位置总曝光量趋势</strong></span>
+                        <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                        background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoad01(1)">导数据</span>
+                        <span style="float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;">分位置：</span>
+                        <el-select v-model="value01" multiple collapse-tags placeholder="请选择" style="float:right;line-height: 61px;margin-right: 20px;" v-on:change="value011"><el-option v-for="item in options" :key="item.key" :label="item.name" :value="item.name"></el-option></el-select>
+</div>
+                    <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub01"></div>
+                </div>
+                <div id="fen02" style="width:809px;height:395px;background:#fff;float:left">
+                    <div style="width:100%;height:61px">
+                        <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:50%;height:100%;line-height:61px;margin-left:20px;float:left">
+                            <strong>分位置总点击量趋势</strong></span>
+                        <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                        background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoad02(2)">导数据</span>
+                        <span style="float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;">分位置：</span>
+                        <el-select v-model="value02" multiple collapse-tags placeholder="请选择" style="float:right;line-height: 61px;margin-right: 20px;" v-on:change="value022"><el-option v-for="item in options" :key="item.key" :label="item.name" :value="item.name"></el-option></el-select>
+</div>
+                    <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub02"></div>
+                </div>
+                <div id="fen03" style="width:809px;height:395px;background:#fff;float:left;margin-right:15px;margin-top:16px">
+                    <div style="width:100%;height:61px">
+                        <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:50%;height:100%;line-height:61px;margin-left:20px;float:left">
+                            <strong>分位置总点击率趋势</strong></span>
+                        <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                        background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoad03(3)">导数据</span>
+                        <span style="float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;">分位置：</span>
+                        <el-select v-model="value03" multiple collapse-tags placeholder="请选择" style="float:right;line-height: 61px;margin-right: 20px;" v-on:change="value033"><el-option v-for="item in options" :key="item.key" :label="item.name" :value="item.name"></el-option></el-select>
+</div>
+                    <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub03"></div>
+                </div>
+                <div id="fen04" style="width:809px;height:395px;background:#fff;float:left;margin-top:16px">
+                    <div style="width:100%;height:61px">
+                        <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:50%;height:100%;line-height:61px;margin-left:20px;float:left">
+                            <strong>分位置总筹码消耗</strong></span>
+                        <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                        background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoad04(4)">导数据</span>
+                        <span style="float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;">分位置：</span>
+                        <el-select v-model="value04" multiple collapse-tags placeholder="请选择" style="float:right;line-height: 61px;margin-right: 20px;" v-on:change="value044"><el-option v-for="item in options" :key="item.key" :label="item.name" :value="item.name"></el-option></el-select>
+</div>
+                    <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub04"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 分部门 -->
+        <div id="sub" style="display:none">
+            <!-- 指标&&饼图 -->
+            <div id="targetPie02" style="width:100%; height:540px">
+                <!-- 指标 -->
+                <div id="target02">
+                    <ul style="width:100%;height:160px;background:#fff;border-radius: 6px;">
+<li class="li" v-for="datalist in dataList02" style="text-align:center;width:544px;border-radius:6px">
+                            <div class="dataFont02" v-text="datalist.name" style="font-family: PingFangSC-Regular;font-size: 18px;color: #595959;margin-top:24px"></div>
+                            <div class="dataCount02" v-text="datalist.datas" style="text-align:center;ont-family: THSMoneyfont-Medium;font-size: 40px;color: #1E2024;margin-top:0px;padding-top:10px"></div>
+                            <div class="dataPrcent" style="font-family: PingFangSC-Regular;font-size: 14px;color: #595959">
+                                <span v-text="datalist.dataPrcent"></span>?<span><strong v-text="datalist.Prcent" style="color:#3C8DBC;"></strong></span>
+                            </div>
+                        </li>
+                    </ul>
+</div>
+                <!-- 饼图 -->
+                <div id="zongLanPie02" style="margin-top:16px">
+                    <div id="pie0102" style="float:left;width:809px; height: 361px;background:#fff;margin-right:15px;border-radius:6px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:78%;height:100%;line-height:61px;margin-left:20px">
+                                <strong v-text="eight01"></strong></span>
+                            <span style="width:11%;height:100%;float:right;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="pieLoadSUB('priceConsumeList')">导数据</span>
+                        </div>
+                        <div style="width:450px;height:278px;background:#fff;margin-left:196px;margin-top: 18px;" id="pie00102"></div>
+                    </div>
+                    <div id="pie0202" style="float:left;width:809px; height: 361px;background:#fff;margin-right:0px;border-radius:6px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:78%;height:100%;line-height:61px;margin-left:20px">
+                                <strong v-text="eight02"></strong></span>
+                            <span style="width:11%;height:100%;float:right;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="pieLoadSUB('adNumList')">导数据</span>
+                        </div>
+                        <div style="width:450px;height:278px;background:#fff;margin-left:196px;margin-top: 18px;" id="pie00202"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 概况 -->
+            <div id="survey" style="margin-top:32px;width:100%;height:1441px;">
+                <!-- 概况点 + 分位置 -->
+                <div id="gaikuang" style="width:100%;height:28px">
+                    <span>
+                        <strong style="width:80px;font-family: PingFangSC-Semibold;font-size: 20px;color: #1E2024">概况</strong>
+                    </span>
+                    <el-popover placement="right" title="展示数据说明:" width="250" trigger="hover" content="根据选择的投放位置汇总数据"><i class="el-icon-warning-outline" slot="reference"></i></el-popover><div style="float:right;width:270px;height:100%">
+                        <div>
+                        <span style="font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:28px;float:left;margin-left:0px;padding-top:6px">分位置：</span>
+                        <el-select v-model="value05" multiple collapse-tags placeholder="请选择" style="float:right;line-height: 40px;" v-on:change="value055"><el-option v-for="item in options" :key="item.key" :label="item.name" :value="item.name"></el-option></el-select>
+</div>
+                    </div>
+                </div>
+                <div id="targetPie03" style="width:100%;height:160px;margin-top:20px">
+                    <div id="target03">
+                        <ul style="width:100%;height:160px;background:#fff;border-radius: 6px;">
+<li class="li" v-for="datalist in dataList03" style="text-align:center;border-radius:6px">
+                                <div class="dataFont" v-text="datalist.name" style="font-family: PingFangSC-Regular;font-size: 18px;color: #595959;margin-top:24px"></div>
+                                <div class="dataCount03" v-text="datalist.datas" style="text-align:center;ont-family: THSMoneyfont-Medium;font-size: 40px;color: #1E2024;padding-top:16px"></div>
+                                <div class="dataPrcent" style="font-family: PingFangSC-Regular;font-size: 14px;color: #595959;">
+                                    <span v-text="datalist.dataPrcent"></span>?<span><strong v-text="datalist.Prcent" style="color:#3C8DBC;"></strong></span>
+                                </div>
+                            </li>
+                        </ul>
+</div>
+                </div>
+                <!-- 分部门  分位置 -->
+                <div style="width:100%;height:1217px;margin-top:16px">
+                    <div id="fen0102" style="width:809px;height:395px;background:#fff;float:left;margin-right:15px;border-radius:6px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:84%;height:100%;line-height:61px;margin-left:20px;float:left">
+                                <strong>分位置筹码消耗趋势</strong></span>
+                            <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoadSUB(1)">导数据</span>
+                        </div>
+                        <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub0101"></div>
+                    </div>
+                    <div id="fen0202" style="width:809px;height:395px;background:#fff;float:left;border-radius:6px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:84%;height:100%;line-height:61px;margin-left:20px;float:left">
+                                <strong>分位置曝光量趋势</strong></span>
+                            <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoadSUB(2)">导数据</span>
+                        </div>
+                        <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub0102"></div>
+                    </div>
+                    <div id="fen0302" style="width:809px;height:395px;background:#fff;float:left;margin-right:15px;margin-top:16px;border-radius:6px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:84%;height:100%;line-height:61px;margin-left:20px;float:left">
+                                <strong>分位置点击量趋势</strong></span>
+                            <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoadSUB(3)">导数据</span>
+                        </div>
+                        <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub0103"></div>
+                    </div>
+                    <div id="fen0402" style="width:809px;height:395px;background:#fff;float:left;margin-top:16px;border-radius:6px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:84%;height:100%;line-height:61px;margin-left:20px;float:left">
+                                <strong>分位置点击率趋势</strong></span>
+                            <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoadSUB(4)">导数据</span>
+                        </div>
+                        <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub0104"></div>
+                    </div>
+                    <div id="fen0502" style="width:809px;height:395px;background:#fff;float:left;margin-top:16px;border-radius:6px">
+                        <div style="width:100%;height:61px">
+                            <span style="font-family: PingFangSC-Semibold;font-size: 18px;color: #1E2024;width:84%;height:100%;line-height:61px;margin-left:20px;float:left">
+                                <strong>分位置广告投放数趋势</strong></span>
+                            <span style="width:12%;height:100%;float:left;font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;line-height:61px;
+                            background:url('/img/adConfig/onload.png') no-repeat 53px 23px; cursor:pointer" v-on:click="lineLoadSUB(5)">导数据</span>
+                        </div>
+                        <div style="width:769px;height:314px;background:#fff; margin-left:20px" id="sub0105"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 表格 -->
+            <div id="detailForm" style="width:100%;margin-top:32px">
+                    <!-- 自定义列  导出数据 -->
+                    <div style="width:100%;height:28px">
+                        <div style="height:28px;float:left;width:84%">
+                            <span><strong style="font-family: PingFangSC-Semibold;font-size: 20px;color: #1E2024;">明细</strong></span>
+                        </div>
+                        <div>
+                            <div style="float:right;width:16%">
+                                <el-button size="medium" style="font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;text-align: right;line-height: 16px;" v-on:click="dialogFormVisible = true">
+                                    自定义列 <i class="el-icon-edit"></i> </el-button><el-dialog title="自定义列" :visible.sync="dialogFormVisible"><div style="height:120px;">
+                                    <div><span><strong>必选项</strong></span></div>
+                                    <div style="height:52px;margin-top:16px">
+                                        <el-checkbox-group v-model="checkListNo"><el-checkbox label="日期" disabled></el-checkbox><el-checkbox label="广告id" disabled></el-checkbox><el-checkbox label="部门" disabled></el-checkbox><el-checkbox label="投放位置" disabled style="margin-right:82px"></el-checkbox><el-checkbox label="广告logid" disabled style="margin-right:92px"></el-checkbox><el-checkbox label="投放应用" disabled></el-checkbox></el-checkbox-group>
+</div>
+                                </div>
+                                <div style="height:185px">
+                                    <div><span><strong>可选项</strong></span></div>
+                                    <div style="height:148px;margin-top:17px">
+                                        <el-checkbox-group v-model="checkListYes"><el-checkbox label="筹码消耗(元)" style="margin-right:59px"></el-checkbox><el-checkbox label="广告名称" style="margin-right:95px"></el-checkbox><el-checkbox label="投放人员" style="margin-right:40px"></el-checkbox><el-checkbox label="状态"></el-checkbox><el-checkbox label="投放平台" style="margin-right:95px"></el-checkbox><el-checkbox label="CPM(元)" style="margin-right:40px"></el-checkbox><el-checkbox label="曝光量(pv)" style="margin-right:71px"></el-checkbox><el-checkbox label="点击量(pv)" style="margin-right:85px"></el-checkbox><el-checkbox label="曝光用户数(uv)" style="margin-right:44px"></el-checkbox><el-checkbox label="点击用户数(uv)" style="margin-right:43px"></el-checkbox><el-checkbox label="点击率(uv)" style="margin-right:85px"></el-checkbox><el-checkbox label="点击率(pv)" style="margin-right:0px"></el-checkbox></el-checkbox-group>
+</div>
+                                </div>
+                                <div slot="footer" class="dialog-footer">
+                                    <el-button v-on:click="dialogFormVisible = false" style="padding: 8px 23.6px">取 消</el-button><el-button type="primary" v-on:click="DivRow(checkListYes)" style="padding: 8px 23.6px">确 定</el-button>
+</div>
+                            </el-dialog><el-button size="medium" style="font-family: PingFangSC-Regular;font-size: 16px;color: #1E2024;text-align: right;line-height: 16px;margin-left:16px" v-on:click="tableLoad">导出数据 <i class="el-icon-download"></i> </el-button>
+</div>
+                        </div>
+                    </div>
+                    <!-- 表格 -->
+                    <div id="biaoge" style="margin-top:20px;margin-bottom:0px;width:100%">
+                        <el-table border highlight-current-row="true" :data="tableData" style="width: 100%"><el-table-column prop="date" label="日期" sortable width="156" key="0"></el-table-column><el-table-column prop="id" label="广告id" sortable width="116" key="1"></el-table-column><el-table-column prop="logid" label="广告logid" sortable width="150" key="12"></el-table-column><el-table-column prop="title" label="广告名称" width="119" key="2" v-if="colData[2].istrue"></el-table-column><el-table-column prop="business" label="部门" width="107" key="3"></el-table-column><el-table-column prop="position" label="投放位置" width="119" key="4"></el-table-column><el-table-column prop="platform" label="投放应用" width="120" key="15"></el-table-column><el-table-column prop="version" label="投放平台" width="120" key="16" v-if="colData[16].istrue"></el-table-column><el-table-column prop="showNum" label="曝光量(pv)" sortable width="136" key="5" v-if="colData[5].istrue"></el-table-column><el-table-column prop="clickNum" label="点击量(pv)" sortable width="136" key="6" v-if="colData[6].istrue"></el-table-column><el-table-column prop="clickRatePv" label="点击率(pv)" sortable width="134" key="17" v-if="colData[17].istrue"></el-table-column><el-table-column prop="showUser" label="曝光用户数(uv)" sortable width="170" key="7" v-if="colData[7].istrue"></el-table-column><el-table-column prop="clickUser" label="点击用户数(uv)" sortable width="170" key="8" v-if="colData[8].istrue"></el-table-column><el-table-column prop="clickRate" label="点击率(uv)" sortable width="134" key="9" v-if="colData[9].istrue"></el-table-column><el-table-column prop="cpm" label="CPM(元)" sortable width="118" key="10" v-if="colData[10].istrue"></el-table-column><el-table-column prop="priceConsume" label="筹码消耗(元)" sortable width="150" key="11" v-if="colData[11].istrue"></el-table-column><el-table-column prop="author" label="投放人员" width="150" key="13" v-if="colData[13].istrue"></el-table-column><el-table-column prop="status" label="状态" width="150" key="14" v-if="colData[14].istrue"></el-table-column></el-table>
+</div>
+            </div>
+            <div style="width:100%;height:20px"></div>
+        </div>
+    </div>
+    <script>
+    </script><script>
+    </script>
+</div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer"><div class="pull-right hidden-xs">
+            <b>Version</b> 0.0.1
+        </div>
+        <strong>Copyright ? 1995-2020 <a href="https://www.10jqka.com.cn/">浙江核新同花顺网络信息股份有限公司</a>.</strong>
+        版权所有
+    </footer><!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar --><div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+<!--alert-->
+<div class="modal fade" id="eqadmin-alert">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="add_title">提示</h4>
+            </div>
+            <div class="modal-body" id="alert_content">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- jQuery 3 -->
+<script src="/bower_components/jquery/dist/jquery.min.js"></script><!-- jQuery UI 1.11.4 --><script src="/bower_components/jquery-ui/jquery-ui.min.js"></script><!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip --><script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script><!-- Bootstrap 3.3.7 --><script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script><!-- Morris.js charts --><script src="/bower_components/raphael/raphael.min.js"></script><script src="/bower_components/morris.js/morris.min.js"></script><!-- Sparkline --><script src="/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script><!-- jvectormap --><script src="/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script><script src="/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script><!-- jQuery Knob Chart --><script src="/bower_components/jquery-knob/dist/jquery.knob.min.js"></script><!-- daterangepicker --><script src="/bower_components/moment/min/moment.min.js"></script><script src="/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script><!-- datepicker --><script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script><script src="/bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script><!-- Bootstrap WYSIHTML5 --><script src="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script><!-- Slimscroll --><script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script><!-- FastClick --><script src="/bower_components/fastclick/lib/fastclick.js"></script><!-- AdminLTE App --><script src="/dist/js/adminlte.fixed.min.js"></script><!-- AdminLTE for demo purposes --><script src="/dist/js/skinSetting.js"></script><!-- Select2 --><script src="/bower_components/select2/dist/js/select2.full.min.js"></script><script src="/bower_components/select2/dist/js/i18n/zh-CN.js"></script><!-- Bootstrap-sweetAlert --><script src="/bower_components/bootstrap-sweetalert/dist/sweetalert.min.js"></script><script src="/bower_components/wangEditor/release/wangEditor.js"></script><script src="/bower_components/spectrum/spectrum.js"></script><!-- 公共函数 --><script src="/js/public/main.js"></script><script>
+    const ROUTE_PREFIX = '';
+    var alertReloadInClose = true;
+    $(document).ready(function () {
+        $('#sidebar-menu').on('click', 'a', function () {
+            if ($(this).attr('href') !== '#') {
+                document.cookie = "menu_id=" + $(this).attr('menu_id') + ";path=/";
+            }
+        });
+
+
+        $('#refresh').on('click', function () {
+            try {
+                $.ajax({
+                    url: '/refresh/',
+                    method: 'get',
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#alert_content').html('刷新菜单成功');
+                        $('#eqadmin-alert').modal();
+                    },
+                    error: function (data) {
+                        $('#alert_content').html('刷新失败');
+                        $('#eqadmin-alert').modal();
+                    }
+                });
+            }
+            catch (e) {
+                $('#alert_content').html('刷新失败');
+                $('#eqadmin-alert').modal();
+            }
+        });
+        //提示框
+        $('#eqadmin-alert').on('hide.bs.modal', function () {
+            if (alertReloadInClose) {
+                window.location.reload();
+            }
+        });
+    });
+</script><script src="/js/dataBoard/common/alineContorl.js"></script><script src="/js/dataBoard/common/adborad.js"></script><script src="/bower_components/jquery-qrcode/jquery.qrcode.min.js"></script><script src="/bower_components/fex-webuploader/dist/webuploader.nolog.min.js"></script><script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script><script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script><script src="/js/adConfig/authorityAudit.js"></script>
+</body>
+</html>
